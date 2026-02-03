@@ -3,6 +3,7 @@ import Layout from '../components/Layout/Layout';
 import ProtectedRoute from '../components/Auth/ProtectedRoute';
 import Login from '../pages/Auth/Login';
 import ProductList from '../components/Product/ProductList';
+import ProductDetail from '../pages/Product/ProductDetail';
 import SellerLayout from '../components/Layout/SellerLayout';
 import SellerDashboard from '../pages/Seller/SellerDashboard';
 import SellerProductList from '../pages/Seller/Product/ProductList';
@@ -23,6 +24,7 @@ export default function App() {
         {/* Public Routes */}
         <Route index element={<Home />} />
         <Route path="shop" element={<ProductList />} />
+        <Route path="product/:id" element={<ProductDetail />} />
         <Route path="roasters" element={<Roasters />} />
         <Route path="login" element={<Login />} />
 
