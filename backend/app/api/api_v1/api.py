@@ -9,3 +9,5 @@ api_router.include_router(orders.router, prefix="/orders", tags=["orders"])
 from app.api.api_v1.endpoints import cart, checkout
 api_router.include_router(cart.router, prefix="/cart", tags=["cart"])
 api_router.include_router(checkout.router, prefix="/checkout", tags=["checkout"])
+from app.api.api_v1.endpoints import uploads
+api_router.include_router(uploads.router, prefix="/uploads", tags=["uploads"])

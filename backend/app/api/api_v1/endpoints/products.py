@@ -3,6 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.future import select
 from sqlalchemy import or_
+from sqlalchemy.orm import selectinload
 
 from app import schemas, models
 from app.api import deps
@@ -93,3 +94,51 @@ async def create_product(
     await db.commit()
 
     return product
+
+@router.patch("/variants/{variant_id}/inventory", response_model=Any)
+async def update_variant_inventory(
+    *,
+    db: AsyncSession = Depends(deps.get_db),
+    variant_id: str,
+    quantity_in: int = Body(..., embed=True),
+    current_user: models.User = Depends(deps.get_current_active_user),
+) -> Any:
+    """
+    Update inventory for a variant.
+    """
+    # 1. Get Variant and Product
+    query = select(models.ProductVariant).where(models.ProductVariant.id == variant_id).options(selectinload(models.ProductVariant.product))
+    result = await db.execute(query)
+    variant = result.scalars().first()
+    
+    if not variant:
+         raise HTTPException(status_code=404, detail="Variant not found")
+         
+    # 2. Auth Check
+    membership = await deps.get_current_roaster(roaster_id=str(variant.product.roaster_id), current_user=current_user, db=db)
+    
+    # 3. Update Inventory
+    # Find inventory record
+    query_inv = select(models.Inventory).where(models.Inventory.variant_id == variant.id)
+    result_inv = await db.execute(query_inv)
+    inventory = result_inv.scalars().first()
+    
+    if not inventory:
+        inventory = models.Inventory(variant_id=variant.id, quantity=0)
+        db.add(inventory)
+        
+    inventory.quantity = quantity_in
+    
+    # 4. Audit
+    audit_service = AuditService(db)
+    await audit_service.log_action(
+        action="UPDATE_INVENTORY",
+        entity_type="Inventory",
+        entity_id=str(inventory.id),
+        actor_user_id=current_user.id,
+        roaster_id=variant.product.roaster_id,
+        changes={"quantity": quantity_in}
+    )
+    
+    await db.commit()
+    return {"message": "Inventory updated", "quantity": inventory.quantity}

@@ -3,7 +3,11 @@ import Layout from '../components/Layout/Layout';
 import ProtectedRoute from '../components/Auth/ProtectedRoute';
 import Login from '../pages/Auth/Login';
 import ProductList from '../components/Product/ProductList';
+import SellerLayout from '../components/Layout/SellerLayout';
 import SellerDashboard from '../pages/Seller/SellerDashboard';
+import SellerProductList from '../pages/Seller/Product/ProductList';
+import ProductForm from '../pages/Seller/Product/ProductForm';
+import SellerOrderList from '../pages/Seller/Orders/OrderList';
 import AdminDashboard from '../pages/Admin/AdminDashboard';
 
 // Temporary Placeholders
@@ -42,8 +46,12 @@ export default function App() {
           <Route path="orders" element={<UserOrders />} />
 
           {/* Seller Routes (Role check TODO) */}
-          <Route path="seller" element={<SellerDashboard />} />
-          <Route path="seller/products" element={<div>Seller Products</div>} />
+          <Route path="seller" element={<SellerLayout />}>
+            <Route index element={<SellerDashboard />} />
+            <Route path="products" element={<SellerProductList />} />
+            <Route path="products/new" element={<ProductForm />} />
+            <Route path="orders" element={<SellerOrderList />} />
+          </Route>
 
           {/* Admin Routes (Role check TODO) */}
           <Route path="admin" element={<AdminDashboard />} />
