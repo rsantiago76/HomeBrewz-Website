@@ -46,9 +46,9 @@ export default function Login() {
             <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                 <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
                     <div>
-                        <labelAndPassword htmlFor="email" className="block text-sm font-medium leading-6 text-coffee-900">
+                        <Label htmlFor="email" className="block text-sm font-medium leading-6 text-coffee-900">
                             Email address
-                        </labelAndPassword>
+                        </Label>
                         <div className="mt-2">
                             <input
                                 id="email"
@@ -63,9 +63,9 @@ export default function Login() {
 
                     <div>
                         <div className="flex items-center justify-between">
-                            <labelAndPassword htmlFor="password" className="block text-sm font-medium leading-6 text-coffee-900">
+                            <Label htmlFor="password" className="block text-sm font-medium leading-6 text-coffee-900">
                                 Password
-                            </labelAndPassword>
+                            </Label>
                             <div className="text-sm">
                                 <a href="#" className="font-semibold text-coffee-600 hover:text-coffee-500">
                                     Forgot password?
@@ -108,6 +108,6 @@ export default function Login() {
     );
 }
 
-function labelAndPassword({ children, htmlFor, className }: any) {
+function Label({ children, htmlFor, className }: any) {
     return <label htmlFor={htmlFor} className={className}>{children}</label>
 }

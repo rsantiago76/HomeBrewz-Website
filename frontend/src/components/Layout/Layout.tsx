@@ -1,5 +1,5 @@
 import { Outlet, Link } from 'react-router-dom';
-import { ShoppingCoffee, User, ShoppingCart, Menu } from 'lucide-react';
+import { Coffee, User, ShoppingCart, Menu } from 'lucide-react';
 
 export default function Layout() {
     return (
@@ -8,7 +8,7 @@ export default function Layout() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex justify-between items-center h-16">
                         <div className="flex text-coffee-700 font-bold text-xl items-center gap-2">
-                            <ShoppingCoffee className="h-8 w-8 text-coffee-600" />
+                            <Coffee className="h-8 w-8 text-coffee-600" />
                             <Link to="/">Homebrewz</Link>
                         </div>
 
