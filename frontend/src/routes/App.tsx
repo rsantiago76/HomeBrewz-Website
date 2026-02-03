@@ -55,6 +55,5 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
-    </Routes>
-  );
+      );
 }
