@@ -20,12 +20,9 @@ const UserOrders = () => <div className="p-4"><h1>My Orders</h1></div>;
 export default function App() {
   return (
     <Routes>
-      {/* Home Route - Full Page Image, No Layout */}
-      <Route path="/" element={<Home />} />
-
-      {/* Main App Layout for other pages */}
       <Route element={<Layout />}>
         {/* Public Routes */}
+        <Route path="/" element={<Home />} />
         <Route path="shop" element={<ProductList />} />
         <Route path="product/:id" element={<ProductDetail />} />
         <Route path="roasters" element={<Roasters />} />
