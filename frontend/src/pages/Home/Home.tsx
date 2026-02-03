@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-// import heroBanner from '../../assets/hero-banner.png';
+import heroBanner from '../../assets/homebrewz-homepage.png';
 import { products } from '../../data/products';
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
                 {/* Hero Banner Image */}
                 <div
                     className="absolute right-0 top-0 bottom-0 w-2/3 bg-cover bg-center h-full"
-                    style={{ backgroundImage: `url(/images/homebrewz-homepage.png)` }}
+                    style={{ backgroundImage: `url(${heroBanner})` }}
                 ></div>
 
                 <div className="relative z-20 max-w-7xl mx-auto px-8 w-full">
