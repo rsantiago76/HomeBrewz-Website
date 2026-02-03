@@ -12,19 +12,16 @@ export default function Layout() {
                             <Link to="/">Homebrewz</Link>
                         </div>
 
-                        <nav className="hidden md:flex space-x-8 text-coffee-600">
-                            <Link to="/shop" className="hover:text-coffee-800 transition">Shop</Link>
-                            <Link to="/roasters" className="hover:text-coffee-800 transition">Roasters</Link>
-                            <Link to="/about" className="hover:text-coffee-800 transition">Our Story</Link>
+                        <nav className="hidden md:flex items-center space-x-8 text-coffee-900 font-medium">
+                            <Link to="/menu" className="hover:text-brand-green transition">Menu</Link>
+                            {/* Other links can be added here */}
                         </nav>
 
                         <div className="flex items-center space-x-4">
                             <Link to="/cart" className="relative p-2 text-coffee-600 hover:bg-coffee-100 rounded-full transition">
-                                <ShoppingCart className="h-5 w-5" />
-                                {/* <span className="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-white transform translate-x-1/2 -translate-y-1/2 bg-red-600 rounded-full">2</span> */}
+                                <span className="text-coffee-900 font-bold mr-2">Cart</span>
                             </Link>
-                            <Link to="/login" className="flex items-center gap-2 px-4 py-2 text-sm font-medium text-white bg-coffee-600 rounded-md hover:bg-coffee-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-coffee-500 transition">
-                                <User className="h-4 w-4" />
+                            <Link to="/login" className="flex items-center gap-2 px-6 py-2 text-sm font-bold text-white bg-brand-green rounded-lg hover:opacity-90 transition shadow-sm">
                                 Sign In
                             </Link>
                         </div>
