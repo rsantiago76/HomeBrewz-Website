@@ -20,40 +20,38 @@ const UserOrders = () => <div className="p-4"><h1>My Orders</h1></div>;
 export default function App() {
   return (
     <Routes>
+      {/* Home Route - Full Page Image, No Layout */}
+      <Route path="/" element={<Home />} />
 
-      <Routes>
-        {/* Home Route - Full Page Image, No Layout */}
-        <Route path="/" element={<Home />} />
+      {/* Main App Layout for other pages */}
+      <Route element={<Layout />}>
+        {/* Public Routes */}
+        <Route path="shop" element={<ProductList />} />
+        <Route path="product/:id" element={<ProductDetail />} />
+        <Route path="roasters" element={<Roasters />} />
+        <Route path="login" element={<Login />} />
 
-        {/* Main App Layout for other pages */}
-        <Route element={<Layout />}>
-          {/* Public Routes */}
-          <Route path="shop" element={<ProductList />} />
-          <Route path="product/:id" element={<ProductDetail />} />
-          <Route path="roasters" element={<Roasters />} />
-          <Route path="login" element={<Login />} />
+        {/* Protected Routes (Valid User) */}
+        <Route element={<ProtectedRoute />}>
+          <Route path="cart" element={<Cart />} />
+          <Route path="checkout" element={<Checkout />} />
+          <Route path="orders" element={<UserOrders />} />
 
-          {/* Protected Routes (Valid User) */}
-          <Route element={<ProtectedRoute />}>
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
-            <Route path="orders" element={<UserOrders />} />
-
-            {/* Seller Routes (Role check TODO) */}
-            <Route path="seller" element={<SellerLayout />}>
-              <Route index element={<SellerDashboard />} />
-              <Route path="products" element={<SellerProductList />} />
-              <Route path="products/new" element={<ProductForm />} />
-              <Route path="orders" element={<SellerOrderList />} />
-            </Route>
-
-            {/* Admin Routes (Role check TODO) */}
-            <Route path="admin" element={<AdminDashboard />} />
+          {/* Seller Routes (Role check TODO) */}
+          <Route path="seller" element={<SellerLayout />}>
+            <Route index element={<SellerDashboard />} />
+            <Route path="products" element={<SellerProductList />} />
+            <Route path="products/new" element={<ProductForm />} />
+            <Route path="orders" element={<SellerOrderList />} />
           </Route>
 
-          {/* Catch all */}
-          <Route path="*" element={<Navigate to="/" replace />} />
+          {/* Admin Routes (Role check TODO) */}
+          <Route path="admin" element={<AdminDashboard />} />
         </Route>
-      </Routes>
-      );
+
+        {/* Catch all */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Route>
+    </Routes>
+  );
 }
