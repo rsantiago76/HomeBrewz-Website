@@ -7,10 +7,10 @@ export default function Layout() {
         <div className="min-h-screen bg-coffee-50 flex flex-col">
             <header className="bg-white border-b border-coffee-200 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-24">
+                    <div className="flex justify-between items-center h-28">
                         <div className="flex items-center">
                             <Link to="/">
-                                <img src={logo} alt="HomeBrewz" className="h-20 w-auto" />
+                                <img src={logo} alt="HomeBrewz" className="h-24 w-auto" />
                             </Link>
                         </div>
 
