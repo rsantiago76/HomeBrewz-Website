@@ -27,7 +27,7 @@ export const products = [
         id: 'cold-brew',
         name: 'Cold Brew',
         price: 4.00,
-        image: 'https://images.unsplash.com/photo-1517701604599-bb29b5dd7359?q=80&w=2670&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=2669&auto=format&fit=crop',
         description: 'Slow-steeped for depth and clarity.',
         longDescription: 'Patience is the secret ingredient. Steeped for 18 hours in cold filtered water, our Cold Brew unlocks the naturally sweet, low-acid flavors of our premium beans. It’s refreshingly crisp, incredibly smooth, and served over crystal-clear ice.',
         flavorNotes: ['Dark chocolate', 'Ripe dark cherry', 'Brown sugar'],
