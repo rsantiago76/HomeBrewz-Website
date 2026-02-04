@@ -12,11 +12,11 @@ import SellerProductList from '../pages/Seller/Product/ProductList';
 import ProductForm from '../pages/Seller/Product/ProductForm';
 import SellerOrderList from '../pages/Seller/Orders/OrderList';
 import AdminDashboard from '../pages/Admin/AdminDashboard';
+import CartPage from './CartPage';
+import CheckoutPage from './CheckoutPage';
 
 import Home from '../pages/Home/Home';
 const Roasters = () => <div className="p-4"><h1>Our Roasters</h1></div>;
-const Cart = () => <div className="p-4"><h1>My Cart</h1></div>;
-const Checkout = () => <div className="p-4"><h1>Checkout</h1></div>;
 const UserOrders = () => <div className="p-4"><h1>My Orders</h1></div>;
 
 export default function App() {
@@ -30,11 +30,11 @@ export default function App() {
           <Route path="product/:id" element={<ProductDetail />} />
           <Route path="roasters" element={<Roasters />} />
           <Route path="login" element={<Login />} />
+          <Route path="cart" element={<CartPage />} />
+          <Route path="checkout" element={<CheckoutPage />} />
 
           {/* Protected Routes (Valid User) */}
           <Route element={<ProtectedRoute />}>
-            <Route path="cart" element={<Cart />} />
-            <Route path="checkout" element={<Checkout />} />
             <Route path="orders" element={<UserOrders />} />
 
             {/* Seller Routes (Role check TODO) */}

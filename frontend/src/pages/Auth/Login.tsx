@@ -95,6 +95,23 @@ export default function Login() {
                             {isSubmitting ? 'Signing in...' : 'Sign in'}
                         </button>
                     </div>
+
+                    <div>
+                        <button
+                            type="button"
+                            onClick={() => {
+                                // Demo credentials
+                                // setValue('email', 'demo@homebrewz.com');
+                                // setValue('password', 'password123');
+                                // handleSubmit(onSubmit)();
+                                alert("Demo login clicked - Mocking login for now");
+                                navigate('/');
+                            }}
+                            className="flex w-full justify-center rounded-md bg-white px-3 py-1.5 text-sm font-semibold leading-6 text-coffee-600 shadow-sm ring-1 ring-inset ring-coffee-300 hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-coffee-600"
+                        >
+                            Sign in as Demo User
+                        </button>
+                    </div>
                 </form>
 
                 <p className="mt-10 text-center text-sm text-gray-500">
