@@ -13,9 +13,13 @@ HomeBrewz is a full-stack e-commerce platform that connects independent coffee r
 HomeBrewz solves the challenge of discovering and buying from micro-roasters by aggregating them into a single, seamless marketplace.
 
 ### Key Features
-*   **For Customers**: Browse specialty coffees, filter by roast/origin, secure checkout (Stripe-ready), and order history.
+*   **For Customers**: Browse specialty coffees, filter by roast/origin, secure checkout (guest & user), and order history.
 *   **For Roasters**: Dedicated **Seller Dashboard** to manage inventory, upload product images (S3), and track orders.
 *   **For Admins**: Platform-wide oversight of users, roasters, and transactions.
+*   **Key Highlights**:
+    *   **Guest Checkout**: Seamless purchasing without account creation.
+    *   **Demo Account**: One-click login for easy portfolio review.
+    *   **Responsive Design**: Mobile-first UI with Vanilla CSS & Tailwind.
 
 ---
 
@@ -25,9 +29,9 @@ The project follows a modern, scalable **Monorepo** architecture designed for pe
 
 ### Tech Stack
 *   **Frontend**: React (Vite), TypeScript, TailwindCSS, React Query.
-*   **Backend**: Python FastAPI, SQLModel/SQLAlchemy (Async), Pydantic.
+*   **Backend**: Python FastAPI, SQLModel/SQLAlchemy (Async), Pydantic. *(Note: Backend checks are currently mocked for demo/client-side focus)*
 *   **Database**: PostgreSQL (Production-ready).
-*   **Auth**: AWS Cognito (JWT-based authentication).
+*   **Auth**: AWS Cognito (JWT-based authentication) & Custom Context.
 *   **Infrastructure**: Docker, AWS Amplify (Frontend), AWS App Runner (Backend).
 *   **Storage**: AWS S3 (Presigned URLs for secure uploads).
 
@@ -108,6 +112,17 @@ The project leverages AWS for a serverless-like experience.
 
 ---
 
+## 📝 Notes for Recruiters
+
+Welcome! This project demonstrates my ability to build full-stack applications with a focus on:
+1.  **System Design**: The architectural choices (split frontend/backend, secure file uploads) reflect real-world scalability considerations.
+2.  **Product Thinking**: Features like **Guest Checkout** and **Demo Mode** were implemented to prioritize user acquisition and ease of review.
+3.  **Modern tooling**: Utilizing Vite for fast builds and Tailwind for rapid, consistent styling.
+
+While the backend logic is fully structured (schemas, endpoints, services), the deployed version currently runs in a **Client-Side Demo Mode** to ensure high availability and responsiveness for portfolio reviewers without incurring always-on backend costs.
+
+---
+
 ## 🗺 Future Roadmap
 
 *   [ ] **Subscriptions**: Recurring coffee deliveries (Stripe Billing).
@@ -118,4 +133,4 @@ The project leverages AWS for a serverless-like experience.
 
 ---
 
-*Built by [Your Name] - 2026*
+*Built by Richard Santiago - 2026*
