@@ -29,22 +29,17 @@ const Home = () => {
                 </div>
             </section>
 
+
             {/* Main Ordering Section */}
             <section>
                 <div className="flex justify-between items-center mb-8">
                     <h2 className="text-3xl font-bold text-coffee-900">Main Ordering</h2>
-                    <div className="flex items-center gap-4">
-                        <span className="font-bold text-coffee-900">$2.00</span>
-                        <button className="bg-brand-green text-white px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition">
-                            Add to Cart
-                        </button>
-                    </div>
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {products.map((product) => (
-                        <Link to={`/product/${product.id}`} key={product.id} className="block">
-                            <div className="bg-white rounded-3xl p-4 shadow-sm hover:shadow-md transition group h-full">
+                        <div key={product.id} className="bg-white rounded-3xl p-4 shadow-sm hover:shadow-md transition group h-full flex flex-col">
+                            <Link to={`/product/${product.id}`} className="block flex-grow">
                                 <div className="aspect-square rounded-2xl overflow-hidden mb-4 bg-gray-100">
                                     <img
                                         src={product.image}
@@ -54,24 +49,15 @@ const Home = () => {
                                 </div>
                                 <h3 className="font-bold text-lg text-coffee-900">{product.name}</h3>
                                 <p className="text-gray-400 font-medium">${product.price.toFixed(2)}</p>
-                            </div>
-                        </Link>
+                            </Link>
+                            <button
+                                className="bg-brand-green text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition mt-4 w-full"
+                                onClick={() => console.log(`Added ${product.name} to cart`)}
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
                     ))}
-                </div>
-            </section>
-
-            {/* Horizontal Product Card Preview (from screenshot bottom right) */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white p-4 rounded-3xl flex items-center gap-6 shadow-sm">
-                    <div className="h-32 w-32 rounded-2xl overflow-hidden flex-shrink-0">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?q=80&w=2574&auto=format&fit=crop" alt="Coffee" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="flex-1">
-                        <h3 className="text-xl font-bold text-coffee-900 mb-1">$2.00 <span className="text-gray-400 text-base font-normal ml-2">€ 43</span></h3>
-                        <button className="bg-brand-green text-white px-6 py-2 rounded-lg font-medium hover:bg-opacity-90 transition mt-2 w-full sm:w-auto">
-                            Add to Cart
-                        </button>
-                    </div>
                 </div>
             </section>
         </div>
