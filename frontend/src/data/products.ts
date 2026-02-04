@@ -53,7 +53,7 @@ export const products = [
     {
         id: 'medium-roast-beans',
         name: 'Medium Roast Beans',
-        price: 5.85,
+        price: 14.99,
         image: mediumRoastImg, // Using uploaded image
         description: 'Balanced, smooth, and full of character.',
         longDescription: 'Our Medium Roast is the crowd-pleaser. Roasted to a perfect city roast, it preserves the unique origin characteristics of the bean while introducing a gentle caramelized sweetness. Not too light, not too heavy—just right.',
@@ -65,7 +65,7 @@ export const products = [
     {
         id: 'dark-roast-beans',
         name: 'Dark Roast Beans',
-        price: 5.85,
+        price: 14.99,
         image: darkRoastImg, // Using uploaded image
         description: 'Bold, robust, and smoky.',
         longDescription: 'For those who love a strong cup. Our Dark Roast is taken past the second crack to develop rich, bold flavors with low acidity. It offers a heavy body and a lingering finish that stands up well to milk and sugar.',
