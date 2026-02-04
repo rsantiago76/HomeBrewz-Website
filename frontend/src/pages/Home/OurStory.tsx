@@ -20,7 +20,7 @@ const OurStory = () => {
 
                     <div className="mt-12 pt-8 border-t border-coffee-100">
                         <p className="font-sans text-coffee-900 font-bold text-lg mb-1">Warmly,</p>
-                        <div className="font-handwriting text-3xl text-brand-green mb-2" style={{ fontFamily: 'cursive' }}>Santiago</div>
+                        <div className="font-handwriting text-3xl text-brand-green mb-2" style={{ fontFamily: 'cursive' }}>Richard Santiago</div>
                         <p className="text-coffee-600 text-sm uppercase tracking-wider font-semibold">Founder, HomeBrewz</p>
                     </div>
                 </div>
