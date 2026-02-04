@@ -1,17 +1,15 @@
 import { Outlet, Link } from 'react-router-dom';
-import { User, ShoppingCart, Menu } from 'lucide-react';
-import logo from '../../assets/logo.png';
+import { Coffee, User, ShoppingCart, Menu } from 'lucide-react';
 
 export default function Layout() {
     return (
         <div className="min-h-screen bg-coffee-50 flex flex-col">
             <header className="bg-white border-b border-coffee-200 sticky top-0 z-50">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex justify-between items-center h-32">
-                        <div className="flex items-center">
-                            <Link to="/">
-                                <img src={logo} alt="HomeBrewz" className="h-28 w-auto" />
-                            </Link>
+                    <div className="flex justify-between items-center h-16">
+                        <div className="flex text-coffee-700 font-bold text-xl items-center gap-2">
+                            <Coffee className="h-8 w-8 text-coffee-600" />
+                            <Link to="/">Homebrewz</Link>
                         </div>
 
                         <nav className="hidden md:flex items-center space-x-8 text-coffee-900 font-medium">
