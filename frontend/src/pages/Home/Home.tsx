@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import heroBanner from '../../assets/homebrewz-homepage.png';
+import heroBanner from '../../assets/hero-cups.png';
 import { products } from '../../data/products';
 
 const Home = () => {
