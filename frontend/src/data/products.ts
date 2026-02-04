@@ -1,3 +1,5 @@
+import mediumRoastImg from '../assets/medium-roast.png';
+
 export const products = [
     {
         id: 'latte',
@@ -51,7 +53,7 @@ export const products = [
         id: 'medium-roast-beans',
         name: 'Medium Roast Beans',
         price: 5.85,
-        image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=2574&auto=format&fit=crop', // Coffee bag image
+        image: mediumRoastImg, // Using uploaded image
         description: 'Balanced, smooth, and full of character.',
         longDescription: 'Our Medium Roast is the crowd-pleaser. Roasted to a perfect city roast, it preserves the unique origin characteristics of the bean while introducing a gentle caramelized sweetness. Not too light, not too heavy—just right.',
         flavorNotes: ['Caramel', 'Toasted nut', 'Mild acidity'],
