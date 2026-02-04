@@ -51,7 +51,7 @@ export const products = [
         id: 'medium-roast-beans',
         name: 'Medium Roast Beans',
         price: 5.85,
-        image: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2670&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1550989460-0adf9ea622e2?q=80&w=2574&auto=format&fit=crop', // Coffee bag image
         description: 'Balanced, smooth, and full of character.',
         longDescription: 'Our Medium Roast is the crowd-pleaser. Roasted to a perfect city roast, it preserves the unique origin characteristics of the bean while introducing a gentle caramelized sweetness. Not too light, not too heavy—just right.',
         flavorNotes: ['Caramel', 'Toasted nut', 'Mild acidity'],
@@ -63,7 +63,7 @@ export const products = [
         id: 'dark-roast-beans',
         name: 'Dark Roast Beans',
         price: 5.85,
-        image: 'https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?q=80&w=2670&auto=format&fit=crop',
+        image: 'https://images.unsplash.com/photo-1621360841058-29367f3747cb?q=80&w=2574&auto=format&fit=crop', // Darker coffee bag/setup
         description: 'Bold, robust, and smoky.',
         longDescription: 'For those who love a strong cup. Our Dark Roast is taken past the second crack to develop rich, bold flavors with low acidity. It offers a heavy body and a lingering finish that stands up well to milk and sugar.',
         flavorNotes: ['Dark Chocolate', 'Smoked wood', 'Full body'],
