@@ -15,6 +15,8 @@ import AdminDashboard from '../pages/Admin/AdminDashboard';
 import CartPage from './CartPage';
 import CheckoutPage from './CheckoutPage';
 
+import OurStory from '../pages/Home/OurStory';
+
 import Home from '../pages/Home/Home';
 const Roasters = () => <div className="p-4"><h1>Our Roasters</h1></div>;
 const UserOrders = () => <div className="p-4"><h1>My Orders</h1></div>;
@@ -26,6 +28,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           {/* Public Routes */}
           <Route index element={<Home />} />
+          <Route path="story" element={<OurStory />} />
           <Route path="shop" element={<ProductList />} />
           <Route path="product/:id" element={<ProductDetail />} />
           <Route path="roasters" element={<Roasters />} />

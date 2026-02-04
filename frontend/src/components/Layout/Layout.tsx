@@ -17,6 +17,7 @@ export default function Layout() {
 
                         <nav className="hidden md:flex items-center space-x-8 text-coffee-900 font-medium">
                             <Link to="/menu" className="hover:text-brand-green transition">Menu</Link>
+                            <Link to="/story" className="hover:text-brand-green transition">Our Story</Link>
                             {/* Other links can be added here */}
                         </nav>
 
