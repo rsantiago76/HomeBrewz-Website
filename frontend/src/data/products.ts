@@ -1,4 +1,5 @@
 import mediumRoastImg from '../assets/medium-roast.png';
+import darkRoastImg from '../assets/dark-roast.png';
 
 export const products = [
     {
@@ -65,7 +66,7 @@ export const products = [
         id: 'dark-roast-beans',
         name: 'Dark Roast Beans',
         price: 5.85,
-        image: 'https://images.unsplash.com/photo-1621360841058-29367f3747cb?q=80&w=2574&auto=format&fit=crop', // Darker coffee bag/setup
+        image: darkRoastImg, // Using uploaded image
         description: 'Bold, robust, and smoky.',
         longDescription: 'For those who love a strong cup. Our Dark Roast is taken past the second crack to develop rich, bold flavors with low acidity. It offers a heavy body and a lingering finish that stands up well to milk and sugar.',
         flavorNotes: ['Dark Chocolate', 'Smoked wood', 'Full body'],
