@@ -1,6 +1,8 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from '../components/Layout/Layout';
 import ProtectedRoute from '../components/Auth/ProtectedRoute';
+import { CartProvider } from '../context/CartContext';
+
 import Login from '../pages/Auth/Login';
 import ProductList from '../components/Product/ProductList';
 import ProductDetail from '../pages/Product/ProductDetail';
@@ -19,36 +21,38 @@ const UserOrders = () => <div className="p-4"><h1>My Orders</h1></div>;
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        {/* Public Routes */}
-        <Route index element={<Home />} />
-        <Route path="shop" element={<ProductList />} />
-        <Route path="product/:id" element={<ProductDetail />} />
-        <Route path="roasters" element={<Roasters />} />
-        <Route path="login" element={<Login />} />
+    <CartProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {/* Public Routes */}
+          <Route index element={<Home />} />
+          <Route path="shop" element={<ProductList />} />
+          <Route path="product/:id" element={<ProductDetail />} />
+          <Route path="roasters" element={<Roasters />} />
+          <Route path="login" element={<Login />} />
 
-        {/* Protected Routes (Valid User) */}
-        <Route element={<ProtectedRoute />}>
-          <Route path="cart" element={<Cart />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="orders" element={<UserOrders />} />
+          {/* Protected Routes (Valid User) */}
+          <Route element={<ProtectedRoute />}>
+            <Route path="cart" element={<Cart />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="orders" element={<UserOrders />} />
 
-          {/* Seller Routes (Role check TODO) */}
-          <Route path="seller" element={<SellerLayout />}>
-            <Route index element={<SellerDashboard />} />
-            <Route path="products" element={<SellerProductList />} />
-            <Route path="products/new" element={<ProductForm />} />
-            <Route path="orders" element={<SellerOrderList />} />
+            {/* Seller Routes (Role check TODO) */}
+            <Route path="seller" element={<SellerLayout />}>
+              <Route index element={<SellerDashboard />} />
+              <Route path="products" element={<SellerProductList />} />
+              <Route path="products/new" element={<ProductForm />} />
+              <Route path="orders" element={<SellerOrderList />} />
+            </Route>
+
+            {/* Admin Routes (Role check TODO) */}
+            <Route path="admin" element={<AdminDashboard />} />
           </Route>
 
-          {/* Admin Routes (Role check TODO) */}
-          <Route path="admin" element={<AdminDashboard />} />
+          {/* Catch all */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
-
-        {/* Catch all */}
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Route>
-    </Routes>
+      </Routes>
+    </CartProvider>
   );
 }

@@ -1,7 +1,10 @@
 import { Outlet, Link } from 'react-router-dom';
 import { Coffee, User, ShoppingCart, Menu } from 'lucide-react';
+import { useCart } from '../../context/CartContext';
 
 export default function Layout() {
+    const { cartCount } = useCart();
+
     return (
         <div className="min-h-screen bg-coffee-50 flex flex-col">
             <header className="bg-white border-b border-coffee-200 sticky top-0 z-50">
@@ -18,8 +21,13 @@ export default function Layout() {
                         </nav>
 
                         <div className="flex items-center space-x-4">
-                            <Link to="/cart" className="relative p-2 text-coffee-600 hover:bg-coffee-100 rounded-full transition">
+                            <Link to="/cart" className="relative p-2 text-coffee-600 hover:bg-coffee-100 rounded-full transition flex items-center">
                                 <span className="text-coffee-900 font-bold mr-2">Cart</span>
+                                {cartCount > 0 && (
+                                    <span className="bg-brand-green text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center -ml-1">
+                                        {cartCount}
+                                    </span>
+                                )}
                             </Link>
                             <Link to="/login" className="flex items-center gap-2 px-6 py-2 text-sm font-bold text-white bg-brand-green rounded-lg hover:opacity-90 transition shadow-sm">
                                 Sign In

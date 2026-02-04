@@ -1,8 +1,17 @@
 import { Link } from 'react-router-dom';
 import heroBanner from '../../assets/hero-cups.png';
 import { products } from '../../data/products';
+import { useCart } from '../../context/CartContext';
 
 const Home = () => {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = (product: any) => {
+        addToCart(product);
+        // Simple feedback for now - can be replaced with a toast later
+        alert(`Added ${product.name} to cart!`);
+    };
+
     return (
         <div className="space-y-16 pb-16">
             {/* Hero Section */}
@@ -52,7 +61,7 @@ const Home = () => {
                             </Link>
                             <button
                                 className="bg-brand-green text-white px-4 py-2 rounded-lg font-medium hover:bg-opacity-90 transition mt-4 w-full"
-                                onClick={() => console.log(`Added ${product.name} to cart`)}
+                                onClick={() => handleAddToCart(product)}
                             >
                                 Add to Cart
                             </button>

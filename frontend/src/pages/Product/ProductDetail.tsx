@@ -3,9 +3,19 @@ import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, ShoppingBag } from 'lucide-react';
 import { products } from '../../data/products';
 
+import { useCart } from '../../context/CartContext';
+
 export default function ProductDetail() {
     const { id } = useParams<{ id: string }>();
     const product = products.find(p => p.id === id);
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        if (product) {
+            addToCart(product);
+            alert(`Added ${product.name} to cart!`);
+        }
+    };
 
     if (!product) {
         return <Navigate to="/" replace />;
@@ -84,6 +94,7 @@ export default function ProductDetail() {
                             <button
                                 type="button"
                                 className="flex w-full items-center justify-center rounded-xl border border-transparent bg-brand-green px-8 py-4 text-base font-bold text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-brand-green focus:ring-offset-2 transition shadow-md"
+                                onClick={handleAddToCart}
                             >
                                 <ShoppingBag className="mr-2 h-5 w-5" />
                                 Add {product.name} to Cart
