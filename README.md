@@ -4,7 +4,8 @@
 HomeBrewz is a full-stack e-commerce platform that connects independent coffee roasters directly with coffee enthusiasts. The platform supports multi-vendor sales, secure role-based access, and real-time order tracking.
 
 ![HomeBrewz Dashboard](/docs/screenshots/dashboard_preview.png)
-*(Placeholder: Add screenshot of Admin/Seller Dashboard here)*
+
+
 
 ---
 
@@ -14,12 +15,18 @@ HomeBrewz solves the challenge of discovering and buying from micro-roasters by 
 
 ### Key Features
 *   **For Customers**: Browse specialty coffees, filter by roast/origin, secure checkout (guest & user), and order history.
-*   **For Roasters**: Dedicated **Seller Dashboard** to manage inventory, upload product images (S3), and track orders.
+*   **For Roasters**: Dedicated **Seller Dashboard** with secure **Multi-Tenant Isolation**.
+    *   **Real-time Analytics**: View "Total Sales", "Orders to Fulfill", and "Low Stock" alerts at a glance.
+    *   **Inventory Management**: Create/Edit products with drag-and-drop image uploads (via secured S3 presigned URLs).
+    *   **Order Fulfillment**: Track and update order status (e.g., from "Processing" to "Shipped"), visible instantly to customers.
 *   **For Admins**: Platform-wide oversight of users, roasters, and transactions.
 *   **Key Highlights**:
     *   **Guest Checkout**: Seamless purchasing without account creation.
     *   **Demo Account**: One-click login for easy portfolio review.
     *   **Responsive Design**: Mobile-first UI with Vanilla CSS & Tailwind.
+
+![HomeBrewz Dashboard](/docs/screenshots/dashboard_preview.png)
+*(Note: The dashboard implements strict RLS-like logic in the application layer, ensuring roasters can only query their own data.)*
 
 ---
 
