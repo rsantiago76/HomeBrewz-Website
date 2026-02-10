@@ -2,6 +2,7 @@ from typing import Optional, List
 from sqlalchemy import String, Boolean, ForeignKey, Enum as SAEnum
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 import enum
+import uuid
 
 from app.models.base import Base, UUIDMixin, TimestampMixin, SoftDeleteMixin
 

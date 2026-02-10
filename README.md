@@ -1,6 +1,8 @@
 # HomeBrewz ☕
 **Direct-to-Consumer Specialty Coffee Marketplace**
 
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://homebrewz-frontend.vercel.app)
+
 HomeBrewz is a full-stack e-commerce platform that connects independent coffee roasters directly with coffee enthusiasts. The platform supports multi-vendor sales, secure role-based access, and real-time order tracking.
 
 ![HomeBrewz Dashboard](/docs/screenshots/dashboard_preview.png)
@@ -39,7 +41,7 @@ The project follows a modern, scalable **Monorepo** architecture designed for pe
 *   **Backend**: Python FastAPI, SQLModel/SQLAlchemy (Async), Pydantic. *(Note: Backend checks are currently mocked for demo/client-side focus)*
 *   **Database**: PostgreSQL (Production-ready).
 *   **Auth**: AWS Cognito (JWT-based authentication) & Custom Context.
-*   **Infrastructure**: Docker, AWS Amplify (Frontend), AWS App Runner (Backend).
+*   **Infrastructure**: Docker, Vercel (Frontend), AWS Amplify (Backend).
 *   **Storage**: AWS S3 (Presigned URLs for secure uploads).
 
 ### Data Flow & Components
@@ -107,15 +109,15 @@ Once running, visit `http://localhost:8000/docs` to explore endpoints:
 
 The project leverages AWS for a serverless-like experience.
 
-### Frontend (AWS Amplify)
+### Frontend (Vercel)
 *   **Method**: CI/CD connected to GitHub.
-*   **Build Settings**: See `amplify.yml`.
-*   **Env Variables**: `VITE_API_URL`, `VITE_COGNITO_USER_POOL_ID`.
+*   **URL**: [https://homebrewz-frontend.vercel.app](https://homebrewz-frontend.vercel.app)
+*   **Env Variables**: `VITE_API_BASE_URL` (Pointing to Amplify Backend).
 
-### Backend (AWS App Runner / Container)
-*   **Containerization**: `Dockerfile` included in `backend/`.
-*   **Config**: Stateless service scaling automatically with traffic.
-*   **Env Variables**: `DATABASE_URL`, `COGNITO_CLIENT_ID`, `AWS_ACCESS_KEY_ID`.
+### Backend (AWS Amplify)
+*   **Type**: Python Web Service (FastAPI).
+*   **Config**: Stateless service scaling automatically.
+*   **Env Variables**: `DATABASE_URL`, `COGNITO_USER_POOL_ID`, `AWS_ACCESS_KEY_ID`.
 
 ---
 
